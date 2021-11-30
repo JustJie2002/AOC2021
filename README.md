@@ -1,4 +1,4 @@
 # AOC2021
-None
-Author : Jie Chen
+None\n
+Author : Jie Chen\n
 University : Rochester Institute of Technology
