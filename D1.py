@@ -20,10 +20,19 @@ class Solution:
         self.data = data
 
     def Part_One(self):
-        pass
+        ans = 0
+        for i in range(1, len(self.data)):
+            ans += self.data[i] > self.data[i - 1]
+        return ans
 
     def Part_Two(self):
-        pass
+        m = [0 for _ in range(len(self.data))]
+        for i in range(len(self.data) - 2):
+            m[i] += self.data[i] + self.data[i + 1] + self.data[i + 2]
+        ans = 0
+        for i in range(1, len(self.data)):
+            ans += m[i] > m[i - 1]
+        return ans
     
 
 if __name__ == "__main__":
