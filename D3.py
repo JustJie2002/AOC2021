@@ -19,13 +19,13 @@ class Solution:
         self.data = data
 
     def Part_One(self):
-        cnt = [[0, 0] for _ in range(len(self.data[0]))]
+        counter = [[0, 0] for _ in range(len(self.data[0]))]
         for x in self.data:
             for i in range(len(x)):
-                cnt[i][int(x[i])] += 1
+                counter[i][int(x[i])] += 1
         ans = ""
         res = ""
-        for a, b in cnt:
+        for a, b in counter:
             if a > b:
                 ans += '0'
                 res += '1'
@@ -35,21 +35,21 @@ class Solution:
         return int(ans, 2) * int(res, 2)
 
     def consider(self, bits, index, switch):
-        count = [0, 0]
+        counter = [0, 0]
         for bit in bits:
             if bit[index] == '1':
-                count[1] += 1
+                counter[1] += 1
             else:
-                count[0] += 1
+                counter[0] += 1
         
         win = "0-0"
         if switch:
-            if count[1] >= count[0]:
+            if counter[1] >= counter[0]:
                 win = '1'
             else:
                 win = '0'
         else:
-            if count[0] <= count[1]:
+            if counter[0] <= counter[1]:
                 win = '0'
             else:
                 win = '1'
