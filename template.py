@@ -11,8 +11,7 @@ class Read:
     def Real(self):
         with open("input.txt", "a+") as r:
             r.seek(0)
-            real = r.read().splitlines()
-            real = [int(n) for n in real]
+            real = r.read().strip().splitlines()
         return real
 
 class Solution:
